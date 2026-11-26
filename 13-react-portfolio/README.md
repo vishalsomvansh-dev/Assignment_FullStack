@@ -1,0 +1,1 @@
+Run `npm install`, then `npm run dev`. Open the local URL shown by Vite. Replace the sample project descriptions, email, GitHub and LinkedIn links with your own details.

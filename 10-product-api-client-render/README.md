@@ -1,0 +1,1 @@
+Run `npm install`, `npm start`, then open http://localhost:3000. The browser uses fetch() to render products and submit a new product (client-side rendering).

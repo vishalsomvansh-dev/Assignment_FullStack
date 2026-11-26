@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Dynamic Chessboard</title>
+<style>body{font-family:Arial;display:grid;place-items:center;min-height:100vh;background:#eee}.board{display:grid;grid-template-columns:repeat(8, min(10vw,65px));grid-template-rows:repeat(8,min(10vw,65px));border:5px solid #333}.square{display:grid;place-items:center;font-size:clamp(22px,5vw,42px)}.light{background:#f0d9b5}.dark{background:#b58863}</style></head><body><div><h2>Chessboard (UI only)</h2><div class="board" id="board"></div></div>
+<script>
+const board=document.querySelector("#board");
+const pieces=[["♜","♞","♝","♛","♚","♝","♞","♜"],Array(8).fill("♟"),...Array.from({length:4},()=>Array(8).fill("")),Array(8).fill("♙"),["♖","♘","♗","♕","♔","♗","♘","♖"]];
+pieces.forEach((row,r)=>row.forEach((piece,c)=>{const square=document.createElement("div");square.className=`square ${(r+c)%2?"dark":"light"}`;square.textContent=piece;board.append(square)}));
+</script></body></html>

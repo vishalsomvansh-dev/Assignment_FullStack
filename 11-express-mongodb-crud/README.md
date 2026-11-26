@@ -1,0 +1,1 @@
+1. Install MongoDB locally or create an Atlas cluster. 2. Copy `.env.example` to `.env` and set `MONGO_URI`. 3. Run `npm install` then `npm start`. CRUD routes: GET /products, GET /products/:id, POST /products, PUT /products/:id, DELETE /products/:id. Send JSON body for create/update: `{ "name":"Pen", "price":20, "description":"Blue ink pen" }`.

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ten Cards</title>
+<style>
+*{box-sizing:border-box}body{font-family:Arial;margin:0;padding:24px;background:#f1f5f9}
+.cards{display:flex;gap:16px;overflow-x:auto;padding:10px}
+.card{flex:0 0 230px;background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px #0002}
+.card img{width:100%;height:140px;object-fit:cover}.content{padding:14px}.content h3{margin:0 0 8px}.content p{color:#555;line-height:1.4;margin:0}
+</style></head><body><h1>Featured Cards</h1><div class="cards" id="cards"></div>
+<script>
+const cards=Array.from({length:10},(_,i)=>({title:`Card ${i+1}`,description:`This is a short description for card ${i+1}.`}));
+document.querySelector("#cards").innerHTML=cards.map((c,i)=>`
+<article class="card"><img src="https://picsum.photos/seed/card${i+1}/500/300" alt="${c.title}">
+<div class="content"><h3>${c.title}</h3><p>${c.description}</p></div></article>`).join("");
+</script></body></html>

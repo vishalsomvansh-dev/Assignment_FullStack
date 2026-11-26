@@ -1,0 +1,1 @@
+Run `npm install` and `npm start`. Test with Postman or Thunder Client. Endpoints: GET /products, GET /products/:id, POST /products, PUT /products/:id, DELETE /products/:id. Data is in memory and resets when server restarts.

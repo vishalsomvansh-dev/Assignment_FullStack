@@ -1,0 +1,9 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Snake and Ladder</title>
+<style>body{font-family:Arial;text-align:center;background:#f8fafc}.board{display:grid;grid-template-columns:repeat(10, min(8.5vw,55px));margin:20px auto;width:max-content;border:2px solid #333}.cell{height:min(8.5vw,55px);display:grid;place-items:center;border:1px solid #aaa;background:#fff;font-size:12px;position:relative}.cell:nth-child(4n){background:#dbeafe}.token{font-size:20px;color:#dc2626}button{padding:10px 18px;background:#2563eb;color:white;border:0;border-radius:7px}</style></head><body><h1>Snake and Ladder</h1><div class="board" id="board"></div><p id="status">Player 1 is at position 0</p><button id="roll">Roll Dice</button>
+<script>
+const snakes={17:7,54:34,62:19,98:79},ladders={3:22,8:30,28:84,58:77,75:86,80:99};
+let position=0;const board=document.querySelector("#board");
+function render(){board.innerHTML="";for(let n=100;n>=1;n--){const cell=document.createElement("div");cell.className="cell";let text=n;if(snakes[n])text+=` 🐍→${snakes[n]}`;if(ladders[n])text+=` 🪜→${ladders[n]}`;cell.textContent=text;if(n===position){const token=document.createElement("b");token.className="token";token.textContent=" ●";cell.append(token)}board.append(cell)}}
+document.querySelector("#roll").onclick=()=>{if(position===100)return;const dice=1+Math.floor(Math.random()*6);let next=position+dice;if(next<=100){position=next;if(snakes[position])position=snakes[position];else if(ladders[position])position=ladders[position]}document.querySelector("#status").textContent=`You rolled ${dice}. Player is at ${position}${position===100?" — You win!":""}`;render()};
+render();
+</script></body></html>

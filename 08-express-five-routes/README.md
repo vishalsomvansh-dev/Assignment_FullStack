@@ -1,0 +1,1 @@
+Run `npm install`, then `npm start`. Open http://localhost:3000. Routes: GET /, /about, /contact, /api/notes and POST /notes. EJS is the template engine.
